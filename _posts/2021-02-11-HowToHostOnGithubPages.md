@@ -17,12 +17,12 @@ Ich habe mich für [Minimal Mistakes](https://github.com/mmistakes/mm-github-pag
 2. Github Pages unter Settings aktivieren.
 3. Custom Domain eintragen.
 
-   ![Screenshot Github Pages Settings](./../assets/images/GithubPagesSettingsScreenshot.jpg "Githubs Pages Setup")
+   ![Screenshot Github Pages Settings]({{ site.url }}{{ site.baseurl }}/assets/images/GithubPagesSettingsScreenshot.jpg "Githubs Pages Setup")
 
 4.  `cname` Eintrag für `sopor10.github.io.` anlegen.
     Dafür gibt es verschiedene Wege, ich habe den Eintrag über meinen DNS Provider erstellt. 
     
-    ![Cname Eintrag](./../assets/images/CnameEntry.JPG "Cname Entry")
+    ![alt]({{ site.url }}{{ site.baseurl }}/assets/images/CnameEntry.JPG "Cname Entry")
 
 
 Soweit zu meinem Setup. 
