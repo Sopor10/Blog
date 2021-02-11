@@ -25,3 +25,4 @@ Ich habe mich für [Minimal Mistakes](https://github.com/mmistakes/mm-github-pag
 
 
 Soweit zu meinem Setup. 
+Bis zum nächsten mal.
