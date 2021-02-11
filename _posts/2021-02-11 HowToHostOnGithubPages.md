@@ -20,7 +20,8 @@ Ich habe mich für [Minimal Mistakes](https://github.com/mmistakes/mm-github-pag
    ![Screenshot Github Pages Settings](./../assets/images/GithubPagesSettingsScreenshot.jpg "Githubs Pages Setup")
 
 4.  `cname` Eintrag für `sopor10.github.io.` anlegen.
-
+    Dafür gibt es verschiedene Wege, ich habe den Eintrag über meinen DNS Provider erstellt. 
+    
     ![Cname Eintrag](./../assets/images/CnameEntry.JPG "Cname Entry")
 
 
