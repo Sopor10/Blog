@@ -5,8 +5,6 @@ categories:
   - Blog
 tags:
   - Post Formats
-  - readability
-  - standard
 ---
 
 Schon lange habe ich mir vorgenommen einen Blog zu schreiben, um meine Probleme (und hoffentlich auch Lösungen) bei meiner Arbeit als Software Entwickler festzuhalten.
