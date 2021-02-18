@@ -23,55 +23,55 @@ Um die Testklassen klein zu halten, müssen wir auch die getesteten Klassen klei
 Schauen wir uns das folgende Beispiel an:
 
 ``` c#
-	public class Person
-	{
-		private decimal speed;
-		private (decimal X, decimal Y) position;
-		private decimal volume;
-		private string language;
+public class Person
+{
+  private decimal speed;
+  private (decimal X, decimal Y) position;
+  private decimal volume;
+  private string language;
 
-		public Person(decimal speed, (decimal X, decimal Y) position, decimal volume, string language)
-		{
-			this.speed = speed;
-			position = position;
-			this.volume = volume;
-			this.language = language;
-		}
+  public Person(decimal speed, (decimal X, decimal Y) position, decimal volume, string language)
+  {
+    this.speed = speed;
+    this.position = position;
+    this.volume = volume;
+    this.language = language;
+  }
 
-		public void Speak(string text)
-		{
-      // Logic
-		}
+  public void Speak(string text)
+  {
+    // Logic
+  }
 
-		public void Walk((decimal X, decimal Y) ziel)
-		{
-      //speed is between 0 and 1
-      var newX = (ziel.X - position.X) * speed + position.X;
-      var newY = (ziel.Y - position.Y) * speed + position.Y;
-      this.position = (X,Y);
-		}
-	}
+  public void Walk((decimal X, decimal Y) ziel)
+  {
+    //speed is between 0 and 1
+    var newX = (ziel.X - position.X) * speed + position.X;
+    var newY = (ziel.Y - position.Y) * speed + position.Y;
+    this.position = (X,Y);
+  }
+}
 
 ```
 
 Wenn wir diese Klasse testen, könnte das ungefähr so aussehen:
 
 ``` c#
-	public class PersonTest
-	{
-		[Test]
-		async public Task Walking_Works()
-		{
-      // Test
-		}
-    //------- noch viele weitere Walking Tests
-		[Test]
-		async public Task Speaking_Works()
-		{
-      // Test
-		}
-    //------- noch viele weitere Speaking Tests
+public class PersonTest
+{
+  [Test]
+  async public Task Walking_Works()
+  {
+    // Test
   }
+  //------- noch viele weitere Walking Tests
+  [Test]
+  async public Task Speaking_Works()
+  {
+    // Test
+  }
+  //------- noch viele weitere Speaking Tests
+}
 ```
 
 Die Logik der `Walk` Methode benötigt nicht alle Eigenschaften der Person, um ihre Entscheidungen zu treffen.
@@ -90,24 +90,24 @@ An dieser Stelle kann man nun die Logik des Gehens aus der Klasse Person herausz
 Das sieht dann wie folgt aus:
 
 ```c#
-	public class Walking
-	{
-    private decimal speed;
-    private (decimal X, decimal Y) position;
-		public Walking(decimal speed, (decimal X, decimal Y) position)
-		{
-			this.position = position;
-      this.speed = speed;
-		}
+public class Walking
+{
+  private decimal speed;
+  private (decimal X, decimal Y) position;
+  public Walking(decimal speed, (decimal X, decimal Y) position)
+  {
+    this.position = position;
+    this.speed = speed;
+  }
 
-		public (decimal X, decimal Y) Walk((decimal X, decimal Y) ziel)
-		{
-      //speed is between 0 and 1
-      var newX = (ziel.X - position.X) * speed + position.X;
-      var newY = (ziel.Y - position.Y) * speed + position.Y;
-      return (X,Y);
-		}
-	}
+  public (decimal X, decimal Y) Walk((decimal X, decimal Y) ziel)
+  {
+    //speed is between 0 and 1
+    var newX = (ziel.X - position.X) * speed + position.X;
+    var newY = (ziel.Y - position.Y) * speed + position.Y;
+    return (X,Y);
+  }
+}
 
 ```
 
@@ -123,9 +123,9 @@ Daher dürfen wir die public Methoden nicht verändern:
 
 ``` c#
 public void Walk((decimal X, decimal Y) ziel)
-		{
-      this.position = new Walking(speed, position).Walk(ziel);
-		}
+{
+  this.position = new Walking(speed, position).Walk(ziel);
+}
 ```
 
 Auf diese Weise haben wir weiterhin die Walking Logik versteckt hinter der Person.
